@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #eeb974;
+  --color-primary-hover: #d6953f;
+  --color-accent: #f59e0b;
+  --color-secondary: #4b9c8e;
+  --color-secondary-hover: #3b8478;
+  --color-background: #f9fafb;
+  --color-text-dark: #1f2937;
+  --color-text-light: #ffffff;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Upload ONE high-res logo (512x512 PNG or SVG), get all sizes generated! */
+
+/* 
+Mobile (default)      ← Everyone starts here
+    ↓
+640px (sm:)          ← Gets added if screen is this wide
+    ↓
+768px (md:)          ← Gets added if screen is this wide
+    ↓
+1024px (lg:)         ← Gets added if screen is this wide
+    ↓
+1280px (xl:)         ← Gets added if screen is this wide */
+
+/* 
+@theme {
+  --color-primary: #eeb974;           → bg-primary, text-primary, border-primary
+  --color-primary-hover: #d6953f;     → bg-primary-hover, text-primary-hover
+  --color-accent: #f59e0b;            → bg-accent, text-accent
+  --color-secondary: #4b9c8e;         → bg-secondary, text-secondary
+  --color-text-dark: #1f2937;         → bg-text-dark, text-text-dark
+  --color-text-light: #ffffff;        → bg-text-light, text-text-light
+} */
+
+/* 
+@theme {
+  --font-heading: 'Poppins', sans-serif;  → font-heading
+  --font-body: 'Inter', sans-serif;        → font-body
+} */

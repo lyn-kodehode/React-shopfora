@@ -1,0 +1,84 @@
+/* CHEATSHEET FOR TAILWIND */
+
+/*
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                     TAILWIND QUICK REFERENCE CHEATSHEET                      ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║  RESPONSIVE BREAKPOINTS (Mobile-First)                                      ║
+║  ┌────────────┬─────────────┬──────────────────┬────────────────────────┐  ║
+║  │ Prefix     │ Screen Size │ Device           │ Usage                  │  ║
+║  ├────────────┼─────────────┼──────────────────┼────────────────────────┤  ║
+║  │ (none)     │ 0px+        │ Mobile phones    │ Default - all sizes    │  ║
+║  │ sm:        │ 640px+      │ Large phones     │ Small screens and up   │  ║
+║  │ md:        │ 768px+      │ Tablets          │ Medium screens and up  │  ║
+║  │ lg:        │ 1024px+     │ Laptops/desktops │ Large screens and up   │  ║
+║  │ xl:        │ 1280px+     │ Desktops         │ XL screens and up      │  ║
+║  │ 2xl:       │ 1536px+     │ Large desktops   │ 2XL screens and up     │  ║
+║  └────────────┴─────────────┴──────────────────┴────────────────────────┘  ║
+║                                                                              ║
+║  COMMON UTILITIES                                                            ║
+║  ┌──────────────────────┬──────────────────┬─────────────────────────────┐  ║
+║  │ Need                 │ Look For         │ Example Classes             │  ║
+║  ├──────────────────────┼──────────────────┼─────────────────────────────┤  ║
+║  │ Horizontal layout    │ Flexbox          │ flex, justify-between       │  ║
+║  │ Vertical stack       │ Flexbox          │ flex flex-col               │  ║
+║  │ Center items         │ Flexbox          │ items-center, justify-center│  ║
+║  │ Space inside         │ Spacing (Padding)│ p-4, px-6, py-2             │  ║
+║  │ Space outside        │ Spacing (Margin) │ m-4, mx-auto, mt-4          │  ║
+║  │ Text size            │ Typography       │ text-sm, text-xl, text-4xl  │  ║
+║  │ Text weight          │ Typography       │ font-normal, font-bold      │  ║
+║  │ Background color     │ Backgrounds      │ bg-white, bg-primary        │  ║
+║  │ Text color           │ Typography       │ text-gray-900, text-white   │  ║
+║  │ Rounded corners      │ Border Radius    │ rounded, rounded-lg         │  ║
+║  │ Shadow               │ Effects          │ shadow-md, shadow-lg        │  ║
+║  │ Grid layout          │ Grid             │ grid grid-cols-4 gap-4      │  ║
+║  │ Hover state          │ States           │ hover:bg-blue-600           │  ║
+║  │ Mobile → Desktop     │ Responsive       │ text-xl md:text-2xl lg:text-4xl │  ║
+║  └──────────────────────┴──────────────────┴─────────────────────────────┘  ║
+║                                                                              ║
+║  SPACING SCALE (Same for padding & margin)                                  ║
+║  ┌────────┬──────────┬────────┬──────────┬────────┬──────────┐             ║
+║  │ Class  │ Size     │ Class  │ Size     │ Class  │ Size     │             ║
+║  ├────────┼──────────┼────────┼──────────┼────────┼──────────┤             ║
+║  │ p-1    │ 0.25rem  │ p-2    │ 0.5rem   │ p-3    │ 0.75rem  │             ║
+║  │ p-4    │ 1rem     │ p-5    │ 1.25rem  │ p-6    │ 1.5rem   │             ║
+║  │ p-8    │ 2rem     │ p-10   │ 2.5rem   │ p-12   │ 3rem     │             ║
+║  │ p-16   │ 4rem     │ p-20   │ 5rem     │ p-24   │ 6rem     │             ║
+║  └────────┴──────────┴────────┴──────────┴────────┴──────────┘             ║
+║                                                                              ║
+║  COMMON PATTERNS                                                             ║
+║  ┌─────────────────────────────────────────────────────────────────────┐   ║
+║  │ Mobile → Desktop Text:  text-base md:text-lg lg:text-xl            │   ║
+║  │ Stack → Row Layout:     flex flex-col md:flex-row                   │   ║
+║  │ Responsive Grid:        grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4│   ║
+║  │ Increase Spacing:       p-4 md:p-6 lg:p-8                           │   ║
+║  │ Hide on Mobile:         hidden md:block                             │   ║
+║  │ Show on Mobile Only:    block md:hidden                             │   ║
+║  │ Center Container:       max-w-7xl mx-auto px-4                      │   ║
+║  │ Full Height Layout:     min-h-screen flex flex-col                  │   ║
+║  │ Button Hover:           bg-primary hover:bg-primary-hover transition│   ║
+║  └─────────────────────────────────────────────────────────────────────┘   ║
+║                                                                              ║
+║  CUSTOM COLORS (Shopfora Theme)                                             ║
+║  ┌──────────────────────┬────────────┐                                      ║
+║  │ Variable             │ Usage      │                                      ║
+║  ├──────────────────────┼────────────┤                                      ║
+║  │ bg-primary           │ #eeb974    │                                      ║
+║  │ bg-primary-hover     │ #d6953f    │                                      ║
+║  │ bg-accent            │ #f59e0b    │                                      ║
+║  │ bg-secondary         │ #4b9c8e    │                                      ║
+║  │ bg-secondary-hover   │ #3b8478    │                                      ║
+║  │ bg-background        │ #f9fafb    │                                      ║
+║  │ text-text-dark       │ #1f2937    │                                      ║
+║  │ text-text-light      │ #ffffff    │                                      ║
+║  │ font-heading         │ Poppins    │                                      ║
+║  │ font-body            │ Inter      │                                      ║
+║  └──────────────────────┴────────────┘                                      ║
+║                                                                              ║
+║  Resources:                                                                  ║
+║  • Tailwind Docs: https://tailwindcss.com/docs                              ║
+║  • Cheatsheet: https://nerdcave.com/tailwind-cheat-sheet                    ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+*/
