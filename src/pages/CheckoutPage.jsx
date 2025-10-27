@@ -81,73 +81,83 @@ export default function CheckoutPage() {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                     placeholder="John Doe"
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label className="">Email Address *</label>
+                  <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                    Email Address *
+                  </label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className=""
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                     placeholder="john@example.com"
                   />
                 </div>
 
                 {/* Street Address */}
                 <div>
-                  <label className="">Street Address *</label>
+                  <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                    Street Address *
+                  </label>
                   <input
                     type="text"
                     name="street"
                     value={formData.street}
                     onChange={handleInputChange}
                     required
-                    className=""
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                     placeholder="123 Clark Rd"
                   />
                 </div>
 
                 {/* City, State, Zip */}
                 <div className="grid md:grid-cols-3 gap-4">
-                  <label className="">City *</label>
+                  <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                    City *
+                  </label>
                   <input
                     type="text"
                     name="city"
                     value={formData.city}
                     onChange={handleInputChange}
                     required
-                    className=""
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                     placeholder="Paradise"
                   />
                 </div>
                 <div>
-                  <label className="">State *</label>
+                  <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                    State *
+                  </label>
                   <input
                     type="text"
                     name="state"
                     value={formData.state}
                     onChange={handleInputChange}
                     required
-                    className=""
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                     placeholder="California"
                   />
                 </div>
                 <div>
-                  <label className="">Zip Code *</label>
+                  <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                    Zip Code *
+                  </label>
                   <input
                     type="text"
                     name="zipCode"
                     value={formData.zipCode}
                     onChange={handleInputChange}
                     required
-                    className=""
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:ouline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                     placeholder="10001"
                   />
                 </div>
@@ -161,7 +171,9 @@ export default function CheckoutPage() {
                   <div className="space-y-4">
                     {/* Card number */}
                     <div>
-                      <label className="">Card Number *</label>
+                      <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                        Card Number *
+                      </label>
                       <input
                         type="text"
                         name="cardNumber"
@@ -169,7 +181,7 @@ export default function CheckoutPage() {
                         onChange={handleInputChange}
                         required
                         maxLength="16"
-                        className=""
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:ouline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                         placeholder="1234 5678 9012 3456"
                       />
                     </div>
@@ -178,7 +190,9 @@ export default function CheckoutPage() {
                   {/* Expiry and CVV */}
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label>Expiry Date *</label>
+                      <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                        Expiry Date *
+                      </label>
                       <input
                         type="text"
                         name="cardExpiry"
@@ -186,13 +200,15 @@ export default function CheckoutPage() {
                         onChange={handleInputChange}
                         required
                         maxLength="5"
-                        className=""
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:ouline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                         placeholder="MM/YY"
                       />
                     </div>
 
                     <div>
-                      <label>CVV *</label>
+                      <label className="block font-body text-sm font-semibold text-text-dark mb-2">
+                        CVV *
+                      </label>
                       <input
                         type="text"
                         name="cardCVV"
@@ -200,7 +216,7 @@ export default function CheckoutPage() {
                         onChange={handleInputChange}
                         required
                         maxLength="3"
-                        className=""
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:ouline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                         placeholder="123"
                       />
                     </div>

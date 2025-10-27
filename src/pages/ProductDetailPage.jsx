@@ -124,7 +124,8 @@ export default function ProductDetailPage() {
           {/* Price */}
           <div className="mb-6">
             {/* review -baseline doesnt align */}
-            <div className="flex items-baseline gap-3">
+            {/* <div className="flex items-baseline gap-3"> */}
+            <div className="flex items-center gap-3">
               <p className="text-5xl font-heading font-bold text-accent">
                 ${product.price}
               </p>

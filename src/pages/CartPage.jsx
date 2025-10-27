@@ -37,7 +37,7 @@ export default function CartPage() {
         {items.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-lg shadow-md p-4 flex gap-4"
+            className="bg-white rounded-lg shadow-md p-2 sm:p-4 flex gap-2 sm:gap-4 "
           >
             <img
               src={item.thumbnail}
@@ -45,6 +45,7 @@ export default function CartPage() {
               className="w-24 h-24 object-cover rounded"
             />
             <div className="flex-1">
+              {/* <div className="flex-auto"> */}
               {/* <div> */}
               <h3 className="font-heading font-semibold text-text-dark">
                 {item.title}
@@ -59,7 +60,7 @@ export default function CartPage() {
             </div>
 
             {/* quantity controls */}
-            <div className="flex items-center gap-2 bg-background rounded-lg px-3 py-2">
+            <div className="flex items-center gap-2 bg-background rounded-lg px-2 sm:px-3 py-1 sm:py-2">
               <button
                 onClick={() => updateQuantity(item.id, item.updateQuantity - 1)}
                 className="text-text-dark hover:text-primary-hover transition-colors"
