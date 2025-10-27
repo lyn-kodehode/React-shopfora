@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
       {/* clickable product card */}
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/React-shopfora/product/${product.id}`}>
         {/* product image + badge + discount + stock */}
         <div className="aspect-square bg-background relative">
           <img

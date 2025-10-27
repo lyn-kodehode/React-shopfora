@@ -20,7 +20,7 @@ export default function NavBar() {
       {/* container-classname, marginleftright, md:768 paddingX, md:768 paddingY */}
       <div className="container mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
         {/* ShopFora Logo */}
-        <Link to="/">
+        <Link to="/React-shopfora">
           <img
             src="./shopfora-logo-500x145.png"
             alt="ShopFora logo"
@@ -43,13 +43,13 @@ export default function NavBar() {
         {/* Desktop Nav menu with React icons */}
         <div className="hidden md:flex gap-6 font-body items-center">
           <Link
-            to="/"
+            to="/React-shopfora"
             className="text-text-dark hover:text-primary-hover transition-colors flex item gap-2"
           >
             Home
           </Link>
           <Link
-            to="/cart"
+            to="/React-shopfora/cart"
             className="text-text-dark hover:text-primary-hover transition-colors flex items-center gap-2"
           >
             <HiShoppingCart className="text-xl" />
@@ -66,14 +66,14 @@ export default function NavBar() {
           <div className="md:hidden bg-white border-gray-200">
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4 font-body">
               <Link
-                to={"/"}
+                to="/React-shopfora"
                 onClick={toggleHamburgerMenu}
                 className="text-text-dark hover:text-primary-hover transition-colors py-2"
               >
                 Home
               </Link>
               <Link
-                to={"/cart"}
+                to="/React-shopfora/cart"
                 onClick={toggleHamburgerMenu}
                 className="text-text-dark hover:text-primary-hover transition-colors flex items-center gap-2 py-2"
               >

@@ -8,24 +8,24 @@ import SuccessPage from "../pages/SuccessPage";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/React-shopfora",
     element: <MainLayout />,
     children: [
       { index: true, element: <ProductGridPage /> },
       {
-        path: "product/:id",
+        path: "/React-shopfora/product/:id",
         element: <ProductDetailPage />,
       },
       {
-        path: "cart",
+        path: "/React-shopfora/cart",
         element: <CartPage />,
       },
       {
-        path: "checkout",
+        path: "/React-shopfora/checkout",
         element: <CheckoutPage />,
       },
       {
-        path: "checkout/success",
+        path: "/React-shopfora/checkout/success",
         element: <SuccessPage />,
       },
     ],

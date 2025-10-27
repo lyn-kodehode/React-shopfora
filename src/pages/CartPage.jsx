@@ -16,7 +16,7 @@ export default function CartPage() {
           Your Cart is Empty
         </h1>
         <Link
-          to="/"
+          to="/React-shopfora"
           className="inline-block bg-primary-hover hover:bg-accent text-white font-heading font-semibold py-3 px-8 rounded-lg transition-colors"
         >
           Continue Shopping
@@ -95,7 +95,7 @@ export default function CartPage() {
           <span className="text-accent">${totalPrice.toFixed(2)}</span>
         </div>
         <Link
-          to="/checkout"
+          to="/React-shopfora/checkout"
           className="w-full mt-4 bg-primary-hover hover:bg-accent text-white font-heading font-semibold py-3 rounded-lg transition-colors block text-center"
         >
           Proceed to Checkout

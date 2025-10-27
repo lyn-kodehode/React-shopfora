@@ -43,7 +43,7 @@ export default function CheckoutPage() {
           Add some items before checking out!
         </p>
         <Link
-          to="/"
+          to="/React-shopfora"
           className="inline-block bg-primary-hover hover:bg-accent text-white font-heading font-semibold py-3 px-8 rounded-lg transition-colors"
         >
           Continue Shopping

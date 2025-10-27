@@ -50,7 +50,13 @@ export default function SuccessPage() {
 
             <div className="">
               <span className="">Order Date:</span>
-              <span className="">{new Date().toLocaleDateString}</span>
+              <span className="">
+                {new Date().toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
             </div>
 
             <div className="">
@@ -99,7 +105,7 @@ export default function SuccessPage() {
 
         {/* Action BUttons */}
         <div className="">
-          <Link to="/" className="">
+          <Link to="/React-shopfora" className="">
             Continue Shopping
           </Link>
           <button className="">Print Receipt</button>
