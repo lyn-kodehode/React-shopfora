@@ -25,11 +25,27 @@ const fetchSingleProduct = async (id) => {
 };
 
 // custom hook
-
 export const useSingleProduct = (id) => {
   return useQuery({
     queryKey: ["product", id], //cache identifier key, ID
     queryFn: () => fetchSingleProduct(id),
     enabled: !!id, //only fetch if ID exists
+  });
+};
+
+// search products
+const fetchSearchResults = async (searchTerm) => {
+  const { data } = await axios.get(
+    `${API_URL}/products/search?q=${searchTerm}`
+  );
+  return data.products;
+};
+
+// custom hook
+export const useSearchResults = (searchTerm) => {
+  return useQuery({
+    queryKey: ["searchResults", searchTerm],
+    queryFn: () => fetchSearchResults(searchTerm),
+    enabled: !!searchTerm,
   });
 };

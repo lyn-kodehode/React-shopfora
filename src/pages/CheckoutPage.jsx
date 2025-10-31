@@ -29,7 +29,7 @@ export default function CheckoutPage() {
   // handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate("/checkout/success");
+    navigate("/React-shopfora/checkout/success");
   };
 
   // if cart is empty
@@ -119,7 +119,8 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* City, State, Zip */}
-                <div className="grid md:grid-cols-3 gap-4">
+                {/* <div className="grid md:grid-cols-3 gap-4"> */}
+                <div>
                   <label className="block font-body text-sm font-semibold text-text-dark mb-2">
                     City *
                   </label>
@@ -157,6 +158,7 @@ export default function CheckoutPage() {
                     value={formData.zipCode}
                     onChange={handleInputChange}
                     required
+                    maxLength="5"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg font-body focus:ouline-none focus:ring-2 focus:ring-primary placeholder:text-gray-300"
                     placeholder="10001"
                   />
@@ -255,7 +257,7 @@ export default function CheckoutPage() {
                       </p>
                     </div>
                     <p className="font-body text-sm font-semibold text-text-dark">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      ${totalPrice.toFixed(2)}
                     </p>
                   </div>
                 ))}
