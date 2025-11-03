@@ -5,16 +5,35 @@ import axios from "axios";
 const API_URL = "https://dummyjson.com";
 
 // fetch products function
-const fetchProducts = async () => {
-  const { data } = await axios.get(`${API_URL}/products`);
-  return data.products; //returns {products:[...], total, skip, limit}
-};
+// const fetchProducts = async () => {
+//   const { data } = await axios.get(`${API_URL}/products`);
+//   return data.products; //returns {products:[...], total, skip, limit}
+// };
 
 // custom hook
-export const useProducts = () => {
+// export const useProducts = () => {
+//   return useQuery({
+//     queryKey: ["products"],
+//     queryFn: fetchProducts,
+//   });
+// };
+
+// fetch products function with pagination
+// https://dummyjson.com/products?limit=12&skip=0 (id: 1-12)
+// https://dummyjson.com/products?limit=12&skip=12 (id: 13-24)
+const fetchProducts = async ({ limit = 12, skip = 0 }) => {
+  const { data } = await axios.get(
+    `${API_URL}/products?limit=${limit}&skip=${skip}`
+  );
+  return data; //returns {products:[...], total, skip, limit}
+};
+
+// custom hook with pagination
+export const useProducts = ({ page = 1, limit = 12 } = {}) => {
+  const skip = (page - 1) * limit;
   return useQuery({
-    queryKey: ["products"],
-    queryFn: fetchProducts,
+    queryKey: ["products", page, limit],
+    queryFn: () => fetchProducts({ limit, skip }),
   });
 };
 

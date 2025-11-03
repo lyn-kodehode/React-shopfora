@@ -62,7 +62,7 @@ export default function CartPage() {
             {/* quantity controls */}
             <div className="flex items-center gap-2 bg-background rounded-lg px-2 sm:px-3 py-1 sm:py-2">
               <button
-                onClick={() => updateQuantity(item.id, item.updateQuantity - 1)}
+                onClick={() => updateQuantity(item.id, item.quantity - 1)}
                 className="text-text-dark hover:text-primary-hover transition-colors"
               >
                 <HiMinus />
@@ -71,7 +71,7 @@ export default function CartPage() {
                 {item.quantity}
               </span>
               <button
-                onClick={() => updateQuantity(item.id, item.updateQuantity + 1)}
+                onClick={() => updateQuantity(item.id, item.quantity + 1)}
                 className="text-text-dark hover:text-primary-hover transition-colors"
               >
                 <HiPlus />
