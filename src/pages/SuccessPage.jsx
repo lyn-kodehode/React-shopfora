@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../store/cart";
 import { Link } from "react-router-dom";
 
@@ -11,18 +11,23 @@ export default function SuccessPage() {
   // generate fake order#
   const orderNumber = `ORD-${Date.now().toString().slice(-8)}`;
 
-  // clear cart when page loads
-  // useEffect(() => {
-  //   // sets a minute delay to view the order summary
-  //   const timer = setTimeout(() => {
-  //     clearCart();
-  //   }, 1000);
+  // snapshot of order
+  const [orderSnapshot] = useState({
+    items: items,
+    totalPrice: totalPrice,
+    totalItems: totalItems,
+    orderNumber: orderNumber,
+    orderDate: new Date().toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }),
+  });
 
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [clearCart]);
-  // }, []);
+  // clear cart when leaving success page in any method
+  useEffect(() => {
+    return () => clearCart();
+  }, [clearCart]);
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -52,44 +57,54 @@ export default function SuccessPage() {
             <div className="flex justify-between font-body">
               <span className="text-text-dark/70">Order Number:</span>
               <span className="font-semibold text-text-dark">
-                {orderNumber}
+                {/* {orderNumber} */}
+                {orderSnapshot.orderNumber}
               </span>
             </div>
 
             <div className="flex justify-between font-body">
               <span className="text-text-dark/70">Order Date:</span>
               <span className="font-semibold text-text-dark">
-                {new Date().toLocaleDateString("en-US", {
+                {/* {new Date().toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
-                })}
+                })} */}
+                {orderSnapshot.orderDate}
               </span>
             </div>
 
             <div className="flex justify-between font-body">
               <span className="text-text-dark/70">Items Ordered:</span>
-              <span className="font-semibold text-text-dark">{totalItems}</span>
+              <span className="font-semibold text-text-dark">
+                {/* {totalItems} */}
+                {orderSnapshot.totalItems}
+              </span>
               {/* getTotalItems */}
             </div>
 
             <div className="border-t border-gray-200 pt-3 mt-3">
               <div className="flex justify-between font-heading text-xl">
                 <span className="text-text-dark/70">Total Paid:</span>
-                <span className="font-bold text-accent">${totalPrice}</span>
+                <span className="font-bold text-accent">
+                  ${orderSnapshot.totalPrice}
+                  {/* {totalPrice} */}
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Order Items List */}
-        {items.length > 0 && (
+        {/* {items.length > 0 && ( */}
+        {orderSnapshot.items.length > 0 && (
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h3 className="text-lg font-heading font-semibold text-text-dark mb-4">
               Items in Your Order
             </h3>
             <div className="space-y-3">
-              {items.map((item) => (
+              {/* {items.map((item) => ( */}
+              {orderSnapshot.items.map((item) => (
                 <div key={item.id} className="flex gap-3 items-center">
                   <img
                     src={item.thumbnail}
@@ -105,7 +120,8 @@ export default function SuccessPage() {
                     </p>
                   </div>
                   <p className="font-body text-sm font-semibold text-text-dark">
-                    ${totalPrice.toFixed(2)}
+                    {/* ${totalPrice.toFixed(2)} */}$
+                    {orderSnapshot.totalPrice.toFixed(2)}
                   </p>
                 </div>
               ))}

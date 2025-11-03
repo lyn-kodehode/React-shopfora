@@ -32,6 +32,10 @@ h6 {
   font-family: var(--font-heading);
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
 /* Upload ONE high-res logo (512x512 PNG or SVG), get all sizes generated! */
 
 /* 
