@@ -116,12 +116,11 @@ export default function SuccessPage() {
                       {item.title}
                     </p>
                     <p className="font-body text-xs text-text-dark/60">
-                      Qty: {item.quantity} * {item.price}
+                      Qty: {item.quantity} * ${item.price}
                     </p>
                   </div>
                   <p className="font-body text-sm font-semibold text-text-dark">
-                    {/* ${totalPrice.toFixed(2)} */}$
-                    {orderSnapshot.totalPrice.toFixed(2)}
+                    {/* ${totalPrice.toFixed(2)} */}${item.price.toFixed(2)}
                   </p>
                 </div>
               ))}
