@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useEffectEvent, useState } from "react";
 import { useCart } from "../store/cart";
 import { Link } from "react-router-dom";
 
@@ -23,6 +23,11 @@ export default function SuccessPage() {
       day: "numeric",
     }),
   });
+
+  // scroll to top on page mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // clear cart when leaving success page in any method
   useEffect(() => {
